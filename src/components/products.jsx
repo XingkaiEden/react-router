@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 
 class Products extends Component {
   state = {
@@ -8,7 +9,7 @@ class Products extends Component {
       { id: 3, name: "Product 3" }
     ]
   };
-
+  //change <a> to <Link> inorder to prevent full page reload
   render() {
     return (
       <div>
@@ -16,7 +17,7 @@ class Products extends Component {
         <ul>
           {this.state.products.map(product => (
             <li key={product.id}>
-              <a href={`/products/${product.id}`}>{product.name}</a>
+              <Link to={`/products/${product.id}`}>{product.name}</Link>
             </li>
           ))}
         </ul>
